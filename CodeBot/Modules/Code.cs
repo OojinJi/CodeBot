@@ -23,6 +23,13 @@ namespace CodeBot.Modules
            await ReplyAsync("Hello");
         }
 
+        [Command("help")]
+        public async Task help()
+        {
+            EmbedBuilder builder = new EmbedBuilder();
+            builder.WithColor(255, 0, 0);
+            await send("#hello : says hello \n#lunch: runs PE_CompoundIF by Geen Anerine \n", builder);
+        }
 
         [Command("play", RunMode = RunMode.Async)]
         public async Task Game()
@@ -31,7 +38,7 @@ namespace CodeBot.Modules
             EmbedBuilder builder = new EmbedBuilder();
 
             builder.WithTitle(Context.User.Username + "'s adventure");
-            builder.WithColor(0, 251, 0);
+            builder.WithColor(0, 255, 0);
 
             await send("Welcome to the choose your own adventure game\nPlease enter your name", builder);
             
